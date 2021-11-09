@@ -1,0 +1,37 @@
+version: '3'
+services: 
+  apirest:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    volumes:
+      - ./api/routes:/app/routes 
+      - ./api/index.js:/app/index.js
+      - ./api/package.json:/app/package.json
+    #enviroment:
+    #  - WORKER_HOST=worker
+    #  - WORKER_PORT=3002
+    #depends_on:
+     # - worker
+
+  site:
+    stdin_open: true
+    build: 
+      dockerfile: Dockerfile
+      context: ./app
+    volumes: 
+      - ./app/public:/app/public
+      - ./app/views:/app/views
+      - ./app/package.json:/app/package.json
+
+  nginx:
+    depends_on: 
+      - site
+      - apirest
+      #- worker
+    restart: always
+    build: 
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports: 
+      - "8080:80"

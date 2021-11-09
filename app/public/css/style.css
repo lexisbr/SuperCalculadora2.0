@@ -1,0 +1,60 @@
+body{
+    background-color: antiquewhite;  
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: solid 5px white;
+    padding-bottom: 40px;
+    margin: auto;
+    background: black;
+    margin-top: 70px;
+  }
+input[type=number] {
+    width: 75%;
+    padding: 16px 32px;
+    font-size: 18px;
+    margin: 8px 0;
+    border: 1px solid rgb(80, 193, 221);
+    border-radius: 1px;
+    text-align: left;
+    color: #333;
+    background: silver;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: rgb(80, 193, 221);
+    border: white;
+    color: black;
+    padding: 16px 32px;
+    font-size: 16px;
+    min-width: 21%;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+background-color: #333;
+}
+
+h1{
+    color:whitesmoke;
+    font-family: monospace;
+    font-size: 22px;
+}
+
+.history {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: solid 5px white;
+    padding-bottom: 40px;
+    margin: auto;
+    background: black;
+    margin-top: 70px;
+  }
+
+.history b{
+    color: white;
+}
