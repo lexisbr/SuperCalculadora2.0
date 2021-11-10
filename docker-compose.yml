@@ -8,11 +8,7 @@ services:
       - ./api/routes:/app/routes 
       - ./api/index.js:/app/index.js
       - ./api/package.json:/app/package.json
-    #enviroment:
-    #  - WORKER_HOST=worker
-    #  - WORKER_PORT=3002
-    #depends_on:
-     # - worker
+   
 
   site:
     stdin_open: true
@@ -28,7 +24,6 @@ services:
     depends_on: 
       - site
       - apirest
-      #- worker
     restart: always
     build: 
       dockerfile: Dockerfile
